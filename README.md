@@ -6,7 +6,7 @@ Copied and adapted from: https://github.com/liferay-page-management/github-actio
 
 ## Sync liferay-portal Fork
 
-`.github/workflows/sync-liferay-portal.yml` is a cron job that runs daily to sync
+`.github/workflows/sync-liferay-portal.yml` is a cron job that runs hourly to sync
 `liferay-upgrades/liferay-portal` (`master`) from the upstream `liferay/liferay-portal`.
 
 ### Setup
@@ -22,6 +22,6 @@ and expose it as a repository secret named `SYNC`:
 
 ### Schedule
 
-The workflow runs every day at 06:00 UTC and can also be triggered manually from the
-**Actions** tab (`workflow_dispatch`). The `workflow-keepalive` job keeps the scheduled
+The workflow runs at the top of every hour (UTC) and can also be triggered manually from
+the **Actions** tab (`workflow_dispatch`). The `workflow-keepalive` job keeps the scheduled
 trigger from being disabled after 60 days of repository inactivity.
